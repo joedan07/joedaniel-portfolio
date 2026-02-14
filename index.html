@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Joe Daniel | Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;600&family=Fira+Code:wght@400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <button id="theme-toggle">🌙</button>
+    <canvas id="matrix-canvas"></canvas>
+    <div class="noise-overlay"></div> <canvas id="matrix-canvas"></canvas>
+    
+    <div id="scroll-progress"></div>
+    <header class="navbar">
+        <div class="logo">JD</div>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+
+
+<div class="hero-content">
+    <div class="name-container">
+        <h1 class="glitch-name" data-text="JOE">JOE</h1>
+        <h1 class="glitch-name" data-text="DANIEL">DANIEL</h1>
+    </div>
+
+    <div class="hero-subtitle">
+        <h2><span id="typewriter-role"></span><span id="cursor-role" class="cursor">|</span></h2>
+        <p>Building secure, scalable, real-world technology solutions.</p>
+    </div>
+
+    <div class="hero-buttons">
+        <a href="#projects" class="btn primary magnetic-btn">View Projects &rarr;</a>
+        <a href="https://www.linkedin.com/in/joe-daniel-527b0b36a/" target="_blank" class="btn secondary magnetic-btn">LinkedIn</a>
+        <a href="#contact" class="btn secondary magnetic-btn">Contact Me</a>
+    </div>
+</div>
+
+
+    </section>
+
+    <section id="about" class="about reveal">
+    <div class="container">
+        <h2>About Me</h2>
+        
+        <div class="about-content-wrapper">
+
+            <div class="about-text">
+                <p>
+                    I am a B.Tech Computer Science student specializing in Cybersecurity, Blockchain, and IoT, with a strong interest in building secure, scalable, and intelligent systems. I am particularly driven by how technology can streamline operations, enhance digital experiences, and solve real-world problems efficiently.
+                </p>
+                <p>
+                    Over time, I have worked on projects involving automation, system design, and practical implementations that focus on reliability and performance. Alongside my technical work, I have taken on leadership responsibilities, serving as a Tech Lead in school where I successfully livestreamed large-scale events, managed digital platforms, and collaborated on media production for a TEDx event.
+                </p>
+                <p>
+                    I aim to continuously expand my technical depth while developing strong leadership and problem-solving capabilities. My long-term goal is to contribute to and lead impactful technology-driven initiatives that prioritize security, scalability, and innovation.
+                </p>
+            </div>
+            <div class="about-image">
+                <img src="assets/images/profile.jpg" alt="Joe Daniel">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="skills" class="skills reveal">
+    <h2>Technical Skills</h2>
+
+    <div class="skills-grid">
+
+
+        <div class="skill-card reveal">
+            <h3>Languages</h3>
+            <ul>
+                <li>Python</li>
+                <li>C</li>
+                <li>JavaScript</li>
+            </ul>
+        </div>
+
+
+
+        <div class="skill-card reveal">
+            <h3>Core Domains</h3>
+            <ul>
+                <li>Cybersecurity</li>
+                <li>Blockchain</li>
+                <li>IoT Systems</li>
+            </ul>
+        </div>
+
+        <div class="skill-card reveal">
+            <h3>Tools & Technologies</h3>
+            <ul>
+                <li>Git & GitHub</li>
+                <li>VS Code</li>
+                <li>Linux Environment</li>
+                <li>Figma</li>
+            </ul>
+        </div>
+
+        <div class="skill-card reveal">
+            <h3>Other Strengths</h3>
+            <ul>
+                <li>System Design Thinking</li>
+                <li>Automation & Optimization</li>
+                <li>Team Leadership</li>
+                <li>Technical Documentation</li>
+            </ul>
+        </div>
+
+    </div>
+</section>
+
+<section id="projects" class="projects reveal">
+    <h2>Projects</h2>
+
+    <div class="projects-grid">
+
+        <div class="project-card reveal">
+    <h3>Password Generator & Chrome Extension</h3>
+    <p>
+        A secure password generator built with Python and extended into a published Chrome extension.
+        Includes customizable generation options, strength validation, and user-focused UI design.
+    </p>
+    <div class="tech-tags">
+        <span>Python</span>
+        <span>JavaScript</span>
+        <span>Chrome Extension API</span>
+    </div>
+    <div class="project-links">
+        <a href="https://chromewebstore.google.com/detail/maegmkhebhpiholepepddohpfgjfkahc?utm_source=item-share-cb" target="_blank" class="project-btn">View Extension</a>
+    </div>
+</div>
+
+
+        <div class="project-card reveal">
+            <h3>Flutter + AppSheet Application</h3>
+            <p>
+                Developed a mobile application integrating Flutter with AppSheet to streamline 
+                structured data management and user interaction workflows.
+            </p>
+            <div class="tech-tags">
+                <span>Flutter</span>
+                <span>Dart</span>
+                <span>AppSheet</span>
+            </div>
+        </div>
+
+        <div class="project-card reveal">
+            <h3>ClassHub - Hackathon Project</h3>
+            <p>
+                Built a functional solution under time constraints during a competitive hackathon, 
+                focusing on rapid development, team collaboration, and practical implementation.
+            </p>
+            <div class="tech-tags">
+                <span>Team Collaboration</span>
+                <span>Rapid Prototyping</span>
+            </div>
+        </div>
+
+        <div class="project-card reveal">
+            <h3>QR-Based Attendance System <span class="badge">Ongoing</span></h3>
+            <p>
+                Currently developing a secure QR-based attendance system designed to improve 
+                efficiency, prevent proxy entries, and streamline institutional record management.
+            </p>
+            <div class="tech-tags">
+                <span>Flutter</span>
+                <span>QR Integration</span>
+                <span>Backend Logic</span>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section id="experience" class="experience reveal">
+    <h2>Leadership & Experience</h2>
+
+    <div class="timeline">
+
+        <div class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <h3>Tech Lead – School Student Council</h3>
+                <p>
+                    Led technical initiatives and managed digital infrastructure. Successfully livestreamed 
+                    an inter-school event for the first time and ensured smooth technical coordination.
+                </p>
+            </div>
+        </div>
+
+        <div class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <h3>Digital Media & Instagram Management</h3>
+                <p>
+                    Managed the School Student Council’s Instagram page, improving digital communication 
+                    and engagement through structured content and consistent updates.
+                </p>
+            </div>
+        </div>
+
+        <div class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <h3>TEDx Event Videography Collaboration</h3>
+                <p>
+                    Collaborated with peers on videography production for a TEDx event, contributing to 
+                    technical execution and media coordination.
+                </p>
+            </div>
+        </div>
+
+        <div class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <h3>Hackathon Participant</h3>
+                <p>
+                    Built and delivered a functional solution under competitive time constraints, 
+                    focusing on rapid prototyping and collaborative problem solving.
+                </p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section id="contact" class="contact reveal">
+    <h2>Contact</h2>
+
+    <div class="contact-container">
+        <p>
+            I’m always open to discussing technology, collaboration opportunities, 
+            and innovative ideas. Feel free to reach out.
+        </p>
+
+        <div class="contact-links">
+            <a href="joedaniel7260@gmail.com" class="contact-btn">Email Me</a>
+            <a href="https://www.linkedin.com/in/joe-daniel-527b0b36a/" target="_blank" class="contact-btn">LinkedIn</a>
+            <a href="" target="_blank" class="contact-btn">GitHub</a>
+        </div>
+    </div>
+</section>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
