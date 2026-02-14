@@ -101,7 +101,7 @@ This portfolio serves as:
 
 - 📧 Email: joedaniel7260@gmail.com  
 - 💼 LinkedIn: https://www.linkedin.com/in/joe-daniel-527b0b36a/  
-- 🐙 GitHub: (Add your GitHub link here)
+- 🐙 GitHub: https://github.com/joedan07
 
 ---
 
