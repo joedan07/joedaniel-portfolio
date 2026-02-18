@@ -18,7 +18,7 @@
 <body>
     <button id="theme-toggle">🌙</button>
     <canvas id="matrix-canvas"></canvas>
-    <div class="noise-overlay"></div> <canvas id="matrix-canvas"></canvas>
+    <div class="noise-overlay"></div> 
     
     <div id="scroll-progress"></div>
     <header class="navbar">
@@ -31,27 +31,23 @@
     </header>
 
     <section class="hero">
+        <div class="hero-content">
+            <div class="name-container">
+                <h1 class="glitch-name" data-text="JOE">JOE</h1>
+                <h1 class="glitch-name" data-text="DANIEL">DANIEL</h1>
+            </div>
 
+            <div class="hero-subtitle">
+                <h2><span id="typewriter-role"></span><span id="cursor-role" class="cursor">|</span></h2>
+                <p>Building secure, scalable, real-world technology solutions.</p>
+            </div>
 
-<div class="hero-content">
-    <div class="name-container">
-        <h1 class="glitch-name" data-text="JOE">JOE</h1>
-        <h1 class="glitch-name" data-text="DANIEL">DANIEL</h1>
-    </div>
-
-    <div class="hero-subtitle">
-        <h2><span id="typewriter-role"></span><span id="cursor-role" class="cursor">|</span></h2>
-        <p>Building secure, scalable, real-world technology solutions.</p>
-    </div>
-
-    <div class="hero-buttons">
-        <a href="#projects" class="btn primary magnetic-btn">View Projects &rarr;</a>
-        <a href="https://www.linkedin.com/in/joe-daniel-527b0b36a/" target="_blank" class="btn secondary magnetic-btn">LinkedIn</a>
-        <a href="#contact" class="btn secondary magnetic-btn">Contact Me</a>
-    </div>
-</div>
-
-
+            <div class="hero-buttons">
+                <a href="#projects" class="btn primary magnetic-btn">View Projects &rarr;</a>
+                <a href="https://www.linkedin.com/in/joe-daniel-527b0b36a/" target="_blank" class="btn secondary magnetic-btn">LinkedIn</a>
+                <a href="#contact" class="btn secondary magnetic-btn">Contact Me</a>
+            </div>
+        </div>
     </section>
 
     <section id="about" class="about reveal">
@@ -83,21 +79,20 @@
 
     <div class="skills-grid">
 
-
         <div class="skill-card reveal">
             <h3>Languages</h3>
             <ul>
+                <li>JavaScript & TypeScript</li>
+                <li>SQL (PostgreSQL)</li>
                 <li>Python</li>
-                <li>C</li>
-                <li>JavaScript</li>
+                <li>Dart</li>
             </ul>
         </div>
-
-
 
         <div class="skill-card reveal">
             <h3>Core Domains</h3>
             <ul>
+                <li>Full Stack Development</li>
                 <li>Cybersecurity</li>
                 <li>Blockchain</li>
                 <li>IoT Systems</li>
@@ -107,20 +102,20 @@
         <div class="skill-card reveal">
             <h3>Tools & Technologies</h3>
             <ul>
+                <li>React.js</li>
+                <li>Supabase (Backend as a Service)</li>
                 <li>Git & GitHub</li>
-                <li>VS Code</li>
-                <li>Linux Environment</li>
-                <li>Figma</li>
+                <li>Vercel Deployment</li>
             </ul>
         </div>
 
         <div class="skill-card reveal">
-            <h3>Other Strengths</h3>
+            <h3>Key Strengths</h3>
             <ul>
-                <li>System Design Thinking</li>
-                <li>Automation & Optimization</li>
+                <li>System Architecture & Design</li>
+                <li>Database Security (RLS)</li>
+                <li>Frontend State Management</li>
                 <li>Team Leadership</li>
-                <li>Technical Documentation</li>
             </ul>
         </div>
 
@@ -133,20 +128,34 @@
     <div class="projects-grid">
 
         <div class="project-card reveal">
-    <h3>Password Generator & Chrome Extension</h3>
-    <p>
-        A secure password generator built with Python and extended into a published Chrome extension.
-        Includes customizable generation options, strength validation, and user-focused UI design.
-    </p>
-    <div class="tech-tags">
-        <span>Python</span>
-        <span>JavaScript</span>
-        <span>Chrome Extension API</span>
-    </div>
-    <div class="project-links">
-        <a href="https://chromewebstore.google.com/detail/maegmkhebhpiholepepddohpfgjfkahc?utm_source=item-share-cb" target="_blank" class="project-btn">View Extension</a>
-    </div>
-</div>
+            <h3>ClassHub - SaaS Educational Platform</h3>
+            <p>
+                Evolved from a hackathon prototype into a fully functional, deployment-ready SaaS platform. 
+                Architected with a secure relational database, Role-Based Access Control (RBAC), and 
+                real-time synchronization for university-scale deployment.
+            </p>
+            <div class="tech-tags">
+                <span>React + TypeScript</span>
+                <span>Supabase (SQL)</span>
+                <span>RBAC Security</span>
+            </div>
+        </div>
+
+        <div class="project-card reveal">
+            <h3>Password Generator & Chrome Extension</h3>
+            <p>
+                A secure password generator built with Python and extended into a published Chrome extension.
+                Includes customizable generation options, strength validation, and user-focused UI design.
+            </p>
+            <div class="tech-tags">
+                <span>Python</span>
+                <span>JavaScript</span>
+                <span>Chrome Extension API</span>
+            </div>
+            <div class="project-links">
+                <a href="https://chromewebstore.google.com/detail/maegmkhebhpiholepepddohpfgjfkahc?utm_source=item-share-cb" target="_blank" class="project-btn">View Extension</a>
+            </div>
+        </div>
 
 
         <div class="project-card reveal">
@@ -159,18 +168,6 @@
                 <span>Flutter</span>
                 <span>Dart</span>
                 <span>AppSheet</span>
-            </div>
-        </div>
-
-        <div class="project-card reveal">
-            <h3>ClassHub - Hackathon Project</h3>
-            <p>
-                Built a functional solution under time constraints during a competitive hackathon, 
-                focusing on rapid development, team collaboration, and practical implementation.
-            </p>
-            <div class="tech-tags">
-                <span>Team Collaboration</span>
-                <span>Rapid Prototyping</span>
             </div>
         </div>
 
@@ -194,6 +191,18 @@
     <h2>Leadership & Experience</h2>
 
     <div class="timeline">
+
+        <div class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <h3>Production Executive – Digital Office (FLUX)</h3>
+                <p>
+                    Selected as Production Executive, collaborating with some of the most creative and 
+                    talented individuals on campus. This role provided deep exposure to high-level team management, 
+                    allowing me to observe and learn from leadership strategies while executing large-scale digital productions.
+                </p>
+            </div>
+        </div>
 
         <div class="timeline-item reveal">
             <div class="timeline-dot"></div>
@@ -228,17 +237,6 @@
             </div>
         </div>
 
-        <div class="timeline-item reveal">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-                <h3>Hackathon Participant</h3>
-                <p>
-                    Built and delivered a functional solution under competitive time constraints, 
-                    focusing on rapid prototyping and collaborative problem solving.
-                </p>
-            </div>
-        </div>
-
     </div>
 </section>
 
@@ -247,14 +245,14 @@
 
     <div class="contact-container">
         <p>
-            I’m always open to discussing technology, collaboration opportunities, 
-            and innovative ideas. Feel free to reach out.
+            I am always open to discussing system architecture, new technology stacks, 
+            and collaborative opportunities. Feel free to explore my code or reach out directly.
         </p>
 
         <div class="contact-links">
-            <a href="joedaniel7260@gmail.com" class="contact-btn">Email Me</a>
+            <a href="mailto:joedaniel7260@gmail.com" class="contact-btn">Email Me</a>
             <a href="https://www.linkedin.com/in/joe-daniel-527b0b36a/" target="_blank" class="contact-btn">LinkedIn</a>
-            <a href="" target="_blank" class="contact-btn">GitHub</a>
+            <a href="https://github.com/joedan07" target="_blank" class="contact-btn">GitHub</a>
         </div>
     </div>
 </section>
