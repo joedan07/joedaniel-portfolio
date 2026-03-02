@@ -11,7 +11,9 @@
     <link rel="manifest" href="/site.webmanifest">
     <link rel="shortcut icon" href="/favicon.ico">
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Outfit:wght@300;400;600;800;900&family=Fira+Code&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -33,12 +35,12 @@
     <section class="hero">
         <div class="hero-content">
             <div class="name-container">
-                <h1 class="glitch-name" data-text="JOE">JOE</h1>
-                <h1 class="glitch-name" data-text="DANIEL">DANIEL</h1>
+                <h1 class="hero-name">JOE DANIEL</h1>
             </div>
 
             <div class="hero-subtitle">
                 <h2><span id="typewriter-role"></span><span id="cursor-role" class="cursor">|</span></h2>
+                <h3 class="roles">Full-Stack Developer | Software Engineer | Infosec Enthusiast</h3>
                 <p>Building secure, scalable, real-world technology solutions.</p>
             </div>
 
@@ -51,211 +53,147 @@
     </section>
 
     <section id="about" class="about reveal">
-    <div class="container">
-        <h2>About Me</h2>
-        
-        <div class="about-content-wrapper">
-
-            <div class="about-text">
-                <p>
-                    I am a B.Tech Computer Science student specializing in Cybersecurity, Blockchain, and IoT, with a strong interest in building secure, scalable, and intelligent systems. I am particularly driven by how technology can streamline operations, enhance digital experiences, and solve real-world problems efficiently.
-                </p>
-                <p>
-                    Over time, I have worked on projects involving automation, system design, and practical implementations that focus on reliability and performance. Alongside my technical work, I have taken on leadership responsibilities, serving as a Tech Lead in school where I successfully livestreamed large-scale events, managed digital platforms, and collaborated on media production for a TEDx event.
-                </p>
-                <p>
-                    I aim to continuously expand my technical depth while developing strong leadership and problem-solving capabilities. My long-term goal is to contribute to and lead impactful technology-driven initiatives that prioritize security, scalability, and innovation.
-                </p>
+        <div class="container">
+            <h2>About Me</h2>
+            
+            <div class="about-content-wrapper">
+                <div class="about-text">
+                    <p>
+                        I am a B.Tech Computer Science student specializing in <span class="highlight-yellow">Cybersecurity, Blockchain, and IoT</span>, with a strong interest in building <span class="highlight-white">secure, scalable systems</span>. I am particularly driven by how technology can streamline operations, enhance digital experiences, and solve real-world problems efficiently.
+                    </p>
+                    <p>
+                        Over time, I have worked on projects involving automation, system design, and practical implementations that focus on reliability and performance. Alongside my technical work, I have taken on leadership responsibilities, serving as a <span class="highlight-yellow">Tech Lead</span> in school where I successfully livestreamed large-scale events, managed digital platforms, and collaborated on media production for a <span class="highlight-white">TEDx event</span>.
+                    </p>
+                    <p>
+                        I aim to continuously expand my technical depth while developing strong leadership and problem-solving capabilities. My long-term goal is to contribute to and lead <span class="highlight-yellow">impactful tech initiatives</span> that prioritize security, scalability, and innovation.
+                    </p>
+                </div>
+                <div class="about-image">
+                    <img src="assets/images/profile.jpg" alt="Joe Daniel">
+                </div>
             </div>
-            <div class="about-image">
-                <img src="assets/images/profile.jpg" alt="Joe Daniel">
+        </div>
+    </section>
+
+    <section id="skills" class="skills reveal">
+        <h2>Tech Stack</h2>
+        <div class="terminal-container">
+            <div class="terminal-header">
+                <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+                <span class="title">joe@macbook: ~/skills</span>
+            </div>
+            <div class="terminal-body">
+                <p><span class="prompt">➜</span> <span class="command">cat skills.json</span></p>
+                <pre class="json-code">
+{
+  <span class="json-key">"languages"</span>: [<span class="json-string">"JavaScript"</span>, <span class="json-string">"TypeScript"</span>, <span class="json-string">"Python"</span>, <span class="json-string">"SQL"</span>, <span class="json-string">"Dart"</span>],
+  <span class="json-key">"frontend"</span>: [<span class="json-string">"React.js"</span>, <span class="json-string">"HTML5/CSS3"</span>, <span class="json-string">"Tailwind CSS"</span>],
+  <span class="json-key">"backend"</span>: [<span class="json-string">"Node.js"</span>, <span class="json-string">"Supabase"</span>, <span class="json-string">"PostgreSQL RPCs"</span>],
+  <span class="json-key">"architecture"</span>: [<span class="json-string">"WebSockets"</span>, <span class="json-string">"Row Level Security"</span>, <span class="json-string">"REST APIs"</span>],
+  <span class="json-key">"domains"</span>: [<span class="json-string">"Full-Stack Dev"</span>, <span class="json-string">"Cybersecurity"</span>, <span class="json-string">"Blockchain"</span>],
+  <span class="json-key">"tools"</span>: [<span class="json-string">"Git/GitHub"</span>, <span class="json-string">"Vercel"</span>, <span class="json-string">"Figma"</span>]
+}
+                </pre>
+                <p><span class="prompt">➜</span> <span class="command animate-blink">_</span></p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects reveal">
+        <h2>Projects</h2>
+        <div class="projects-grid">
+
+            <div class="project-card reveal" 
+                 data-title="ClassHub - SaaS Educational Platform" 
+                 data-desc="Evolved from a hackathon prototype into a fully functional, deployment-ready SaaS platform. Architected with a secure relational database, Role-Based Access Control (RBAC), and real-time synchronization for university-scale deployment." 
+                 data-tags="React + TypeScript, Supabase, RBAC Security, WebSockets"
+                 data-link="https://classhub-joedan07.vercel.app">
+                <h3 class="project-title">ClassHub - SaaS Educational Platform</h3>
+                <p class="card-desc">Evolved from a hackathon prototype into a fully functional, deployment-ready SaaS platform. Architected with a secure relational database, Role-Based Access Control (RBAC), and real-time synchronization for university-scale deployment.</p>
+                <div class="tech-tags">
+                    <span>React + TypeScript</span>
+                    <span>Supabase</span>
+                    <span>RBAC Security</span>
+                    <span>WebSockets</span>
+                </div>
+                <div class="project-links mt-4">
+                    <a href="https://classhub-joedan07.vercel.app" target="_blank" class="project-btn" onclick="event.stopPropagation()">View Live Project ↗</a>
+                </div>
+            </div>
+
+            <div class="project-card reveal" 
+                 data-title="Password Generator & Chrome Ext." 
+                 data-desc="A secure password generator built with Python and extended into a published Chrome extension. Includes customizable generation options, strength validation, and user-focused UI design." 
+                 data-tags="Python, JavaScript, Chrome Extension API, HTML/CSS"
+                 data-link="https://chromewebstore.google.com/detail/maegmkhebhpiholepepddohpfgjfkahc">
+                <h3 class="project-title">Password Generator & Chrome Extension</h3>
+                <p class="card-desc">A secure password generator built with Python and extended into a published Chrome extension. Includes customizable generation options, strength validation, and user-focused UI design.</p>
+                <div class="tech-tags">
+                    <span>Python</span>
+                    <span>JavaScript</span>
+                    <span>Chrome Extension API</span>
+                    <span>HTML/CSS</span>
+                </div>
+                <div class="project-links mt-4">
+                    <a href="https://chromewebstore.google.com/detail/maegmkhebhpiholepepddohpfgjfkahc" target="_blank" class="project-btn" onclick="event.stopPropagation()">View Extension ↗</a>
+                </div>
+            </div>
+
+            <div class="project-card reveal" 
+                 data-title="Flutter + AppSheet Application" 
+                 data-desc="Developed a mobile application integrating Flutter with AppSheet to streamline structured data management and user interaction workflows." 
+                 data-tags="Flutter, Dart, AppSheet, Mobile Dev"
+                 data-link="">
+                <h3 class="project-title">Flutter + AppSheet Application</h3>
+                <p class="card-desc">Developed a mobile application integrating Flutter with AppSheet to streamline structured data management and user interaction workflows.</p>
+                <div class="tech-tags">
+                    <span>Flutter</span>
+                    <span>Dart</span>
+                    <span>AppSheet</span>
+                    <span>Mobile Dev</span>
+                </div>
+                </div>
+
+        </div>
+    </section>
+
+    <section id="experience" class="experience reveal">
+        <h2>Leadership & Experience</h2>
+        <div class="timeline">
+            <div class="timeline-item reveal"><div class="timeline-dot"></div><div class="timeline-content"><h3>Production Executive – Digital Office (FLUX)</h3><p>Selected as Production Executive, collaborating with some of the most creative and talented individuals on campus. This role provided deep exposure to high-level team management, allowing me to observe and learn from leadership strategies while executing large-scale digital productions.</p></div></div>
+            <div class="timeline-item reveal"><div class="timeline-dot"></div><div class="timeline-content"><h3>Tech Lead – School Student Council</h3><p>Led technical initiatives and managed digital infrastructure. Successfully livestreamed an inter-school event for the first time and ensured smooth technical coordination.</p></div></div>
+            <div class="timeline-item reveal"><div class="timeline-dot"></div><div class="timeline-content"><h3>Digital Media & Instagram Management</h3><p>Managed the School Student Council’s Instagram page, improving digital communication and engagement through structured content and consistent updates.</p></div></div>
+            <div class="timeline-item reveal"><div class="timeline-dot"></div><div class="timeline-content"><h3>TEDx Event Videography Collaboration</h3><p>Collaborated with peers on videography production for a TEDx event, contributing to technical execution and media coordination.</p></div></div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact reveal">
+        <h2>Contact</h2>
+        <div class="contact-container">
+            <p>I am always open to discussing system architecture, new technology stacks, and collaborative opportunities. Feel free to explore my code or reach out directly.</p>
+            <div class="contact-links">
+                <a href="mailto:joedaniel7260@gmail.com" class="contact-btn">Email Me</a>
+                <a href="https://www.linkedin.com/in/joe-daniel-527b0b36a/" target="_blank" class="contact-btn">LinkedIn</a>
+                <a href="https://github.com/joedan07" target="_blank" class="contact-btn">GitHub</a>
+            </div>
+        </div>
+    </section>
+
+    <div id="project-modal" class="modal-overlay">
+        <div class="modal-content terminal-container">
+            <div class="terminal-header modal-header">
+                <span class="dot red" id="close-dot"></span><span class="dot yellow"></span><span class="dot green"></span>
+                <span class="title">Project Overview</span>
+                <button id="close-modal" class="close-btn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <h3 id="modal-title" class="project-title-modal">Project Title</h3>
+                <div id="modal-tags" class="tech-tags mb-4"></div>
+                <p id="modal-desc" class="modal-desc">Project Description</p>
+                <div id="modal-links" class="project-links mt-4"></div>
             </div>
         </div>
     </div>
-</section>
-
-<section id="skills" class="skills reveal">
-    <h2>Technical Skills</h2>
-
-    <div class="skills-grid">
-
-        <div class="skill-card reveal">
-            <h3>Languages</h3>
-            <ul>
-                <li>JavaScript & TypeScript</li>
-                <li>SQL (PostgreSQL)</li>
-                <li>Python</li>
-                <li>Dart</li>
-            </ul>
-        </div>
-
-        <div class="skill-card reveal">
-            <h3>Core Domains</h3>
-            <ul>
-                <li>Full Stack Development</li>
-                <li>Cybersecurity</li>
-                <li>Blockchain</li>
-                <li>IoT Systems</li>
-            </ul>
-        </div>
-
-        <div class="skill-card reveal">
-            <h3>Tools & Technologies</h3>
-            <ul>
-                <li>React.js</li>
-                <li>Supabase (Backend as a Service)</li>
-                <li>Git & GitHub</li>
-                <li>Vercel Deployment</li>
-            </ul>
-        </div>
-
-        <div class="skill-card reveal">
-            <h3>Key Strengths</h3>
-            <ul>
-                <li>System Architecture & Design</li>
-                <li>Database Security (RLS)</li>
-                <li>Frontend State Management</li>
-                <li>Team Leadership</li>
-            </ul>
-        </div>
-
-    </div>
-</section>
-
-<section id="projects" class="projects reveal">
-    <h2>Projects</h2>
-
-    <div class="projects-grid">
-
-        <div class="project-card reveal">
-            <h3>ClassHub - SaaS Educational Platform</h3>
-            <p>
-                Evolved from a hackathon prototype into a fully functional, deployment-ready SaaS platform. 
-                Architected with a secure relational database, Role-Based Access Control (RBAC), and 
-                real-time synchronization for university-scale deployment.
-            </p>
-            <div class="tech-tags">
-                <span>React + TypeScript</span>
-                <span>Supabase (SQL)</span>
-                <span>RBAC Security</span>
-            </div>
-        </div>
-
-        <div class="project-card reveal">
-            <h3>Password Generator & Chrome Extension</h3>
-            <p>
-                A secure password generator built with Python and extended into a published Chrome extension.
-                Includes customizable generation options, strength validation, and user-focused UI design.
-            </p>
-            <div class="tech-tags">
-                <span>Python</span>
-                <span>JavaScript</span>
-                <span>Chrome Extension API</span>
-            </div>
-            <div class="project-links">
-                <a href="https://chromewebstore.google.com/detail/maegmkhebhpiholepepddohpfgjfkahc?utm_source=item-share-cb" target="_blank" class="project-btn">View Extension</a>
-            </div>
-        </div>
-
-
-        <div class="project-card reveal">
-            <h3>Flutter + AppSheet Application</h3>
-            <p>
-                Developed a mobile application integrating Flutter with AppSheet to streamline 
-                structured data management and user interaction workflows.
-            </p>
-            <div class="tech-tags">
-                <span>Flutter</span>
-                <span>Dart</span>
-                <span>AppSheet</span>
-            </div>
-        </div>
-
-        <div class="project-card reveal">
-            <h3>QR-Based Attendance System <span class="badge">Ongoing</span></h3>
-            <p>
-                Currently developing a secure QR-based attendance system designed to improve 
-                efficiency, prevent proxy entries, and streamline institutional record management.
-            </p>
-            <div class="tech-tags">
-                <span>Flutter</span>
-                <span>QR Integration</span>
-                <span>Backend Logic</span>
-            </div>
-        </div>
-
-    </div>
-</section>
-
-<section id="experience" class="experience reveal">
-    <h2>Leadership & Experience</h2>
-
-    <div class="timeline">
-
-        <div class="timeline-item reveal">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-                <h3>Production Executive – Digital Office (FLUX)</h3>
-                <p>
-                    Selected as Production Executive, collaborating with some of the most creative and 
-                    talented individuals on campus. This role provided deep exposure to high-level team management, 
-                    allowing me to observe and learn from leadership strategies while executing large-scale digital productions.
-                </p>
-            </div>
-        </div>
-
-        <div class="timeline-item reveal">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-                <h3>Tech Lead – School Student Council</h3>
-                <p>
-                    Led technical initiatives and managed digital infrastructure. Successfully livestreamed 
-                    an inter-school event for the first time and ensured smooth technical coordination.
-                </p>
-            </div>
-        </div>
-
-        <div class="timeline-item reveal">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-                <h3>Digital Media & Instagram Management</h3>
-                <p>
-                    Managed the School Student Council’s Instagram page, improving digital communication 
-                    and engagement through structured content and consistent updates.
-                </p>
-            </div>
-        </div>
-
-        <div class="timeline-item reveal">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-                <h3>TEDx Event Videography Collaboration</h3>
-                <p>
-                    Collaborated with peers on videography production for a TEDx event, contributing to 
-                    technical execution and media coordination.
-                </p>
-            </div>
-        </div>
-
-    </div>
-</section>
-
-<section id="contact" class="contact reveal">
-    <h2>Contact</h2>
-
-    <div class="contact-container">
-        <p>
-            I am always open to discussing system architecture, new technology stacks, 
-            and collaborative opportunities. Feel free to explore my code or reach out directly.
-        </p>
-
-        <div class="contact-links">
-            <a href="mailto:joedaniel7260@gmail.com" class="contact-btn">Email Me</a>
-            <a href="https://www.linkedin.com/in/joe-daniel-527b0b36a/" target="_blank" class="contact-btn">LinkedIn</a>
-            <a href="https://github.com/joedan07" target="_blank" class="contact-btn">GitHub</a>
-        </div>
-    </div>
-</section>
 
     <script src="js/main.js"></script>
 </body>
