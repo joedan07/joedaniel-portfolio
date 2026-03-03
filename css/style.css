@@ -224,3 +224,49 @@ body.light-mode .modal-body { background: #fff; }
 .contact-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
 .contact-btn, .project-btn { padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; border: 1px solid var(--accent-color); color: var(--accent-color); display: inline-block; transition: all 0.3s ease; }
 .contact-btn:hover, .project-btn:hover { background: var(--accent-color); color: white; box-shadow: 0 0 20px rgba(59, 130, 246, 0.4); }
+
+/* ==========================================================================
+   NEW: SOCIAL ICON BUTTONS (GitHub & LinkedIn)
+   ========================================================================== */
+
+/* Fix Alignment so text buttons and square buttons sit perfectly centered */
+.hero-buttons { align-items: center; }
+.contact-links { align-items: center; }
+
+.social-icon-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    border-radius: 16px;
+    background: var(--card-bg);
+    border: 2px solid var(--card-border);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), border-color 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+}
+
+.social-icon-btn svg {
+    width: 24px;
+    height: 24px;
+    transition: stroke 0.3s ease;
+}
+
+/* GitHub Specifics */
+.github-btn svg { 
+    stroke: var(--text-color); 
+}
+.github-btn:hover {
+    border-color: var(--text-color);
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* LinkedIn Specifics */
+.linkedin-btn svg { 
+    stroke: var(--accent-color); 
+}
+.linkedin-btn:hover {
+    border-color: var(--accent-color);
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(59, 130, 246, 0.25);
+}
