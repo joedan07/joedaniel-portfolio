@@ -270,3 +270,28 @@ body.light-mode .modal-body { background: #fff; }
     transform: scale(1.1);
     box-shadow: 0 5px 15px rgba(59, 130, 246, 0.25);
 }
+
+/* Base state for the experience blocks */
+.experience-card { /* <-- Change this to your actual HTML class name */
+    /* This creates the buttery smooth transition */
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), 
+                box-shadow 0.4s ease, 
+                background-color 0.4s ease;
+    will-change: transform, box-shadow; /* Optimizes performance */
+    border-radius: 12px; /* Ensure your corners are rounded for the glow */
+}
+
+/* Hover state: The Lift and Glow */
+.experience-card:hover {
+    /* 1. The Lift: Moves the entire block (and text) up by exactly 4 pixels */
+    transform: translateY(-4px);
+    
+    /* 2. The Glow: A soft, diffused shadow. 
+       I used a subtle indigo/purple tint (rgba 99, 102, 241) to match modern SaaS aesthetics. 
+       Change the RGB values if your portfolio uses a different accent color! */
+    box-shadow: 0 14px 28px -10px rgba(99, 102, 241, 0.15), 
+                0 4px 10px -4px rgba(99, 102, 241, 0.1);
+                
+    /* Optional: A very faint background shift to make the text pop more */
+    background-color: rgba(255, 255, 255, 0.02); /* Use rgba(0,0,0,0.02) if in Light Mode */
+}
