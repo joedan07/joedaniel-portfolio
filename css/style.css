@@ -71,7 +71,6 @@ body.light-mode .hero { background: radial-gradient(circle at 50% 30%, rgba(37, 
 
 /* Hero Subtitles */
 .hero-subtitle { margin-bottom: 40px; display: flex; flex-direction: column; align-items: center; }
-/* GAP INCREASED HERE (margin-bottom: 18px) */
 .hero-subtitle h2 { font-family: var(--font-code); font-size: clamp(0.9rem, 2vw, 1.2rem); color: var(--accent-color); margin-bottom: 18px; text-transform: uppercase; letter-spacing: 1px; font-weight: 400; text-align: center; }
 .hero-subtitle h2::after { display: none; } 
 .hero-subtitle h3.roles { font-family: var(--font-main); font-size: clamp(0.7rem, 1.5vw, 0.95rem); color: var(--text-color); opacity: 0.7; font-weight: 300; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px; text-align: center; }
@@ -79,7 +78,7 @@ body.light-mode .hero { background: radial-gradient(circle at 50% 30%, rgba(37, 
 .cursor { display: inline-block; color: var(--accent-color); font-weight: bold; animation: blink 1s step-end infinite; }
 @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
 
-.hero-buttons { display: flex; gap: 15px; margin-top: 10px; flex-wrap: wrap; justify-content: center; }
+.hero-buttons { display: flex; gap: 15px; margin-top: 10px; flex-wrap: wrap; justify-content: center; align-items: center; }
 .hero-buttons .btn { padding: 14px 28px; font-size: 1rem; border-width: 2px; display: inline-block; border-radius: 6px; text-decoration: none; font-weight: 600; position: relative; z-index: 10; }
 .primary { background-color: var(--accent-color); color: white; border: 2px solid var(--accent-color); }
 .secondary { border: 2px solid var(--accent-color); color: var(--accent-color); }
@@ -99,7 +98,7 @@ section h2::after { content: ""; display: block; width: 60px; height: 3px; margi
 body.light-mode .about-text p { background: rgba(255, 255, 255, 0.6); }
 
 /* ==========================================================================
-   NEW: BRUTALIST HIGHLIGHTS
+   BRUTALIST HIGHLIGHTS
    ========================================================================== */
 .highlight-yellow {
     background-color: #facc15; 
@@ -164,7 +163,6 @@ body.light-mode .json-string { color: #047857; }
 .project-card { position: relative; padding: 40px 30px; border-radius: 16px; background: var(--card-bg); border: 1px solid var(--card-border); backdrop-filter: blur(12px); box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); cursor: pointer; transition: all 0.35s ease; text-align: left; transform-style: preserve-3d; will-change: transform; display: flex; flex-direction: column;}
 .project-card:hover { transform: translateY(-8px); border-color: var(--accent-color); box-shadow: 0 0 20px rgba(59, 130, 246, 0.4); }
 
-/* NEW PROJECT TITLE FONT STYLING */
 .project-title { 
     font-family: var(--font-main); 
     font-size: 1.35rem; 
@@ -175,10 +173,10 @@ body.light-mode .json-string { color: #047857; }
     line-height: 1.3;
 }
 .project-title-modal {
-    font-family: var(--font-main); /* Switched to match the new card font */
+    font-family: var(--font-main); 
     font-size: 2.2rem; 
-    font-weight: 800; /* Made it bold and punchy */
-    color: var(--text-color); /* Changed to white/dark for cleaner readability */
+    font-weight: 800; 
+    color: var(--text-color); 
     margin-bottom: 15px;
     letter-spacing: -0.5px;
     line-height: 1.2;
@@ -212,27 +210,61 @@ body.light-mode .modal-body { background: #fff; }
 .timeline::before { content: ""; position: absolute; left: 15px; top: 0; width: 3px; height: 100%; background: var(--accent-color); opacity: 0.3; transform: scaleY(0); transform-origin: top; transition: transform 1.2s ease; }
 .timeline.line-visible::before { transform: scaleY(1); }
 .timeline-item { position: relative; margin-bottom: 50px; }
-.timeline-dot { position: absolute; left: -30px; top: 5px; width: 14px; height: 14px; background: var(--accent-color); border-radius: 50%; transition: box-shadow 0.3s ease, transform 0.3s ease; box-shadow: 0 0 8px rgba(59, 130, 246, 0.4); }
-.timeline-item:hover .timeline-dot { box-shadow: 0 0 15px rgba(59, 130, 246, 0.7), 0 0 25px rgba(59, 130, 246, 0.4); transform: scale(1.1); }
+
+.timeline-dot { 
+    position: absolute; 
+    left: -30px; 
+    top: 20px; /* Adjusted to align with the new padded box */
+    width: 14px; 
+    height: 14px; 
+    background: var(--accent-color); 
+    border-radius: 50%; 
+    transition: box-shadow 0.3s ease, transform 0.3s ease; 
+    box-shadow: 0 0 8px rgba(59, 130, 246, 0.4); 
+    z-index: 2;
+}
+.timeline-item:hover .timeline-dot { 
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.7), 0 0 25px rgba(59, 130, 246, 0.4); 
+    transform: scale(1.1); 
+}
+
+/* NEW: Smooth Lift & Glow for the text block */
+.timeline-content {
+    padding: 20px 25px;
+    margin-left: -25px; /* Pulls the box left so text aligns perfectly with the dot */
+    border-radius: 12px;
+    border: 1px solid transparent; /* Invisible border to prevent layout shift */
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), 
+                box-shadow 0.4s ease, 
+                background-color 0.4s ease, 
+                border-color 0.4s ease;
+    will-change: transform, box-shadow;
+}
+
 .timeline-content h3 { font-size: 1.5rem; font-weight: 700; margin-bottom: 10px; color: var(--accent-color); }
 .timeline-content p { line-height: 1.6; opacity: 0.9; color: var(--text-color); }
+
+/* The Hover Interaction */
+.timeline-item:hover .timeline-content {
+    transform: translateY(-4px);
+    background-color: var(--card-bg); 
+    border-color: var(--card-border);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 14px 28px -10px rgba(59, 130, 246, 0.15), 
+                0 4px 10px -4px rgba(59, 130, 246, 0.1);
+}
 
 /* ==========================================================================
    CONTACT
    ========================================================================== */
 .contact p { max-width: 600px; margin: 0 auto 40px; line-height: 1.6; opacity: 0.9; background: var(--card-bg); padding: 20px; border-radius: 12px; text-align: center; }
-.contact-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+.contact-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; align-items: center; }
 .contact-btn, .project-btn { padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; border: 1px solid var(--accent-color); color: var(--accent-color); display: inline-block; transition: all 0.3s ease; }
 .contact-btn:hover, .project-btn:hover { background: var(--accent-color); color: white; box-shadow: 0 0 20px rgba(59, 130, 246, 0.4); }
 
 /* ==========================================================================
-   NEW: SOCIAL ICON BUTTONS (GitHub & LinkedIn)
+   SOCIAL ICON BUTTONS (GitHub & LinkedIn)
    ========================================================================== */
-
-/* Fix Alignment so text buttons and square buttons sit perfectly centered */
-.hero-buttons { align-items: center; }
-.contact-links { align-items: center; }
-
 .social-icon-btn {
     display: inline-flex;
     align-items: center;
@@ -252,9 +284,7 @@ body.light-mode .modal-body { background: #fff; }
 }
 
 /* GitHub Specifics */
-.github-btn svg { 
-    stroke: var(--text-color); 
-}
+.github-btn svg { stroke: var(--text-color); }
 .github-btn:hover {
     border-color: var(--text-color);
     transform: scale(1.1);
@@ -262,36 +292,9 @@ body.light-mode .modal-body { background: #fff; }
 }
 
 /* LinkedIn Specifics */
-.linkedin-btn svg { 
-    stroke: var(--accent-color); 
-}
+.linkedin-btn svg { stroke: var(--accent-color); }
 .linkedin-btn:hover {
     border-color: var(--accent-color);
     transform: scale(1.1);
     box-shadow: 0 5px 15px rgba(59, 130, 246, 0.25);
-}
-
-/* Base state for the experience blocks */
-.experience-card { /* <-- Change this to your actual HTML class name */
-    /* This creates the buttery smooth transition */
-    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), 
-                box-shadow 0.4s ease, 
-                background-color 0.4s ease;
-    will-change: transform, box-shadow; /* Optimizes performance */
-    border-radius: 12px; /* Ensure your corners are rounded for the glow */
-}
-
-/* Hover state: The Lift and Glow */
-.experience-card:hover {
-    /* 1. The Lift: Moves the entire block (and text) up by exactly 4 pixels */
-    transform: translateY(-4px);
-    
-    /* 2. The Glow: A soft, diffused shadow. 
-       I used a subtle indigo/purple tint (rgba 99, 102, 241) to match modern SaaS aesthetics. 
-       Change the RGB values if your portfolio uses a different accent color! */
-    box-shadow: 0 14px 28px -10px rgba(99, 102, 241, 0.15), 
-                0 4px 10px -4px rgba(99, 102, 241, 0.1);
-                
-    /* Optional: A very faint background shift to make the text pop more */
-    background-color: rgba(255, 255, 255, 0.02); /* Use rgba(0,0,0,0.02) if in Light Mode */
 }
