@@ -73,7 +73,7 @@ const About = () => {
                 }
               >
                 <Lanyard
-                  position={[0, 0, 20]}
+                  position={[0, 0, 15.5]}
                   gravity={[0, -40, 0]}
                   frontImage="/assets/images/card-front.png"
                   backImage="/assets/images/card-back.png"
