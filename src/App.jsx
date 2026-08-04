@@ -103,7 +103,7 @@ export default function App() {
       <NavDial sections={SECTIONS} active={activeSection} onSelect={scrollToSection} soundOn={soundOn} />
       <main className="content">
         <Hero onNavigate={scrollToSection} />
-        <Divider texts={['SECURE • SCALABLE • REAL-WORLD •', 'FULL-STACK ✦ INFOSEC ✦ BLOCKCHAIN ✦ IOT ✦']} />
+        <Divider texts={['SECURE • SCALABLE • REAL-WORLD •', 'FULL-STACK ✦ INFOSEC ✦ BLOCKCHAIN ✦ IOT ✦ CYBERSECURITY ✦']} />
         <About />
         <TechStack />
         <Divider texts={['SHIPPED, NOT SHELVED •', 'BUILD ✦ BREAK ✦ HARDEN ✦ REPEAT ✦']} />
