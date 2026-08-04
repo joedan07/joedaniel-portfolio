@@ -1,4 +1,54 @@
+import { Component, lazy, Suspense, useCallback, useState } from 'react';
+
+// The 3D lanyard pulls in three.js + physics, so it loads lazily to keep the
+// initial bundle small. If WebGL is unavailable, errors, or loses its context,
+// we fall back to the static ID badge so the section never breaks.
+const Lanyard = lazy(() => import('../components/reactbits/Lanyard'));
+
+class LanyardBoundary extends Component {
+  state = { failed: false };
+  static getDerivedStateFromError() {
+    return { failed: true };
+  }
+  render() {
+    return this.state.failed ? this.props.fallback : this.props.children;
+  }
+}
+
+const StaticBadge = () => (
+  <div className="id-badge">
+    <div className="id-badge__strap" aria-hidden="true" />
+    <div className="id-badge__clip" aria-hidden="true" />
+    <div className="id-badge__card panel cursor-target">
+      <span className="screw screw--bl" />
+      <span className="screw screw--br" />
+      <div className="id-badge__header">PERSONNEL // ACCESS CARD</div>
+      <div className="id-badge__photo">
+        <img src="/assets/images/profile.jpg" alt="Joe Daniel" />
+      </div>
+      <div className="id-badge__name">JOE DANIEL</div>
+      <div className="id-badge__role">B.TECH CSE — FULL-STACK / INFOSEC</div>
+      <div className="id-badge__barcode" aria-hidden="true" />
+      <div className="id-badge__footer">
+        <span className="led led--green led--blink" /> ACCESS: ALL AREAS
+      </div>
+    </div>
+  </div>
+);
+
+const supportsWebGL = () => {
+  try {
+    const canvas = document.createElement('canvas');
+    return !!(canvas.getContext('webgl2') || canvas.getContext('webgl'));
+  } catch {
+    return false;
+  }
+};
+
 const About = () => {
+  const [glFailed, setGlFailed] = useState(() => !supportsWebGL());
+  const onContextLost = useCallback(() => setGlFailed(true), []);
+
   return (
     <section id="about" className="section">
       <div className="section-head">
@@ -8,23 +58,32 @@ const About = () => {
       </div>
 
       <div className="about-grid">
-        <div className="id-badge">
-          <div className="id-badge__strap" aria-hidden="true" />
-          <div className="id-badge__clip" aria-hidden="true" />
-          <div className="id-badge__card panel cursor-target">
-            <span className="screw screw--bl" />
-            <span className="screw screw--br" />
-            <div className="id-badge__header">PERSONNEL // ACCESS CARD</div>
-            <div className="id-badge__photo">
-              <img src="/assets/images/profile.jpg" alt="Joe Daniel" />
-            </div>
-            <div className="id-badge__name">JOE DANIEL</div>
-            <div className="id-badge__role">B.TECH CSE — FULL-STACK / INFOSEC</div>
-            <div className="id-badge__barcode" aria-hidden="true" />
-            <div className="id-badge__footer">
-              <span className="led led--green led--blink" /> ACCESS: ALL AREAS
-            </div>
-          </div>
+        <div className="about-lanyard">
+          {glFailed ? (
+            <StaticBadge />
+          ) : (
+            <LanyardBoundary fallback={<StaticBadge />}>
+              <Suspense
+                fallback={
+                  <div className="lanyard-loading">
+                    <span className="plate">
+                      <span className="led led--amber led--blink" /> LOADING BADGE…
+                    </span>
+                  </div>
+                }
+              >
+                <Lanyard
+                  position={[0, 0, 20]}
+                  gravity={[0, -40, 0]}
+                  frontImage="/assets/images/card-front.png"
+                  backImage="/assets/images/card-back.png"
+                  imageFit="cover"
+                  onContextLost={onContextLost}
+                />
+                <span className="about-lanyard__hint plate">GRAB THE BADGE ↑ GIVE IT A SWING</span>
+              </Suspense>
+            </LanyardBoundary>
+          )}
         </div>
 
         <div className="about-panel panel">

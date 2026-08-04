@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
+import { FaVolumeUp, FaVolumeMute } from 'react-icons/fa';
 
-const Navbar = ({ sections, active, onNavigate }) => {
+const Navbar = ({ sections, active, onNavigate, soundOn, onToggleSound }) => {
   const [time, setTime] = useState('');
 
   useEffect(() => {
@@ -36,6 +37,16 @@ const Navbar = ({ sections, active, onNavigate }) => {
       </nav>
 
       <div className="nav-status">
+        <button
+          className={`sound-toggle cursor-target${soundOn ? ' sound-toggle--on' : ''}`}
+          onClick={onToggleSound}
+          aria-label={soundOn ? 'Turn sound off' : 'Turn sound on'}
+          aria-pressed={soundOn}
+          title={soundOn ? 'SFX: ON' : 'SFX: OFF'}
+        >
+          {soundOn ? <FaVolumeUp /> : <FaVolumeMute />}
+          <span className={`led ${soundOn ? 'led--green' : 'led--red'}`} />
+        </button>
         <span className="nav-clock">{time}</span>
         <span className="led led--green led--blink" title="System online" />
         <span className="led led--amber" />

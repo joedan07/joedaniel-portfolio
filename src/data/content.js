@@ -46,6 +46,16 @@ export const PROJECTS = [
   },
   {
     unit: 'MODULE 03',
+    title: 'FraudLens — Digital Wallet Fraud Study',
+    status: 'RESEARCH',
+    description:
+      'Co-authored "An Empirical Study of Digital Wallet Fraud Patterns and User Vulnerabilities in India" — analyzing UPI fraud, phishing, smishing and social engineering using primary surveys, NCRB & I4C datasets, and ML/NLP-based fraud detection, backed by field visits to cybersecurity firms.',
+    tags: ['Cybersecurity Research', 'UPI / FinTech', 'Machine Learning', 'NLP'],
+    link: 'https://www.linkedin.com/posts/joe-daniel-527b0b36a_cybersecurity-fintech-digitalfraud-activity-7460901796128010240-xBL9',
+    linkLabel: 'View LinkedIn Post'
+  },
+  {
+    unit: 'MODULE 04',
     title: 'Flutter + AppSheet Application',
     status: 'BUILT',
     description:

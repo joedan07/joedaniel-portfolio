@@ -3,7 +3,7 @@ import OptionWheel from './reactbits/OptionWheel';
 // Fixed right-hand "channel selector": a machined housing around OptionWheel.
 // Scroll, drag, click or arrow-key it to jump between sections; it also tracks
 // the section you scroll to manually.
-const NavDial = ({ sections, active, onSelect }) => {
+const NavDial = ({ sections, active, onSelect, soundOn = true }) => {
   return (
     <aside className="nav-dial" aria-label="Section navigator">
       <div className="nav-dial__housing panel">
@@ -35,7 +35,7 @@ const NavDial = ({ sections, active, onSelect }) => {
             inset={26}
             loop={false}
             draggable
-            soundUrl="/sounds/tick.wav"
+            soundUrl={soundOn ? '/sounds/tick.wav' : ''}
             soundVolume={0.22}
             className="nav-dial__optionwheel"
           />

@@ -58,14 +58,14 @@ const CursorField = () => {
             const d2 = dx * dx + dy * dy;
             if (d2 < CURSOR_DIST * CURSOR_DIST && d2 > 1) {
               const d = Math.sqrt(d2);
-              const force = ((CURSOR_DIST - d) / CURSOR_DIST) * 0.02;
+              const force = ((CURSOR_DIST - d) / CURSOR_DIST) * 0.006;
               p.vx += (dx / d) * force;
               p.vy += (dy / d) * force;
             }
           }
           // clamp speed so the pull never turns into a swarm
           const speed = Math.hypot(p.vx, p.vy);
-          const maxSpeed = 0.9;
+          const maxSpeed = 0.55;
           if (speed > maxSpeed) {
             p.vx = (p.vx / speed) * maxSpeed;
             p.vy = (p.vy / speed) * maxSpeed;

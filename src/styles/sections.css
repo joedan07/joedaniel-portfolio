@@ -169,9 +169,33 @@
 
 .about-grid {
   display: grid;
-  grid-template-columns: 300px 1fr;
-  gap: 44px;
-  align-items: start;
+  grid-template-columns: 380px 1fr;
+  gap: 34px;
+  align-items: stretch;
+}
+
+/* 3D lanyard column */
+.about-lanyard {
+  position: relative;
+  min-height: 600px;
+  /* the physics band anchors at the top of this box */
+  overflow: visible;
+}
+
+.lanyard-loading {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-lanyard__hint {
+  position: absolute;
+  bottom: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
 }
 
 /* Lanyard ID badge */

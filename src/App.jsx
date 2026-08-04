@@ -1,8 +1,9 @@
 import { useCallback, useEffect, useState } from 'react';
 import TargetCursor from './components/reactbits/TargetCursor';
-import ClickSpark from './components/reactbits/ClickSpark';
 import ScrollVelocity from './components/reactbits/ScrollVelocity';
+import ClickRipple from './components/ClickRipple';
 import CursorField from './components/CursorField';
+import AmbientDrift from './components/AmbientDrift';
 import Navbar from './components/Navbar';
 import NavDial from './components/NavDial';
 import ScrollProgress from './components/ScrollProgress';
@@ -25,6 +26,14 @@ function Divider({ texts }) {
 export default function App() {
   const [activeSection, setActiveSection] = useState(0);
   const [finePointer, setFinePointer] = useState(false);
+  const [soundOn, setSoundOn] = useState(() => localStorage.getItem('jd-sound') === 'on');
+
+  const toggleSound = useCallback(() => {
+    setSoundOn(prev => {
+      localStorage.setItem('jd-sound', prev ? 'off' : 'on');
+      return !prev;
+    });
+  }, []);
 
   useEffect(() => {
     const mq = window.matchMedia('(pointer: fine)');
@@ -74,17 +83,24 @@ export default function App() {
       <CursorField />
       <div className="noise-overlay" aria-hidden="true" />
       <ScrollProgress />
-      <ClickSpark sparkColor="#ffb454" sparkSize={11} sparkRadius={24} sparkCount={10} duration={480} />
+      <ClickRipple />
+      <AmbientDrift enabled={soundOn} />
       {finePointer && (
         <TargetCursor
-          spinDuration={2.4}
+          spinDuration={7}
           hideDefaultCursor
           cursorColor="#ffffff"
           cursorColorOnTarget="#ffb454"
         />
       )}
-      <Navbar sections={SECTIONS} active={activeSection} onNavigate={scrollToSection} />
-      <NavDial sections={SECTIONS} active={activeSection} onSelect={scrollToSection} />
+      <Navbar
+        sections={SECTIONS}
+        active={activeSection}
+        onNavigate={scrollToSection}
+        soundOn={soundOn}
+        onToggleSound={toggleSound}
+      />
+      <NavDial sections={SECTIONS} active={activeSection} onSelect={scrollToSection} soundOn={soundOn} />
       <main className="content">
         <Hero onNavigate={scrollToSection} />
         <Divider texts={['SECURE • SCALABLE • REAL-WORLD •', 'FULL-STACK ✦ INFOSEC ✦ BLOCKCHAIN ✦ IOT ✦']} />
