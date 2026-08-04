@@ -54,10 +54,14 @@ export default function Lanyard({
         gl={{ alpha: transparent }}
         onCreated={({ gl }) => {
           gl.setClearColor(new THREE.Color(0x000000), transparent ? 0 : 1);
-          // let the host swap in a non-WebGL fallback if the GPU gives up
+          // let the host swap in a non-WebGL fallback if the GPU gives up.
+          // R3F force-loses the context when the Canvas unmounts, so only
+          // report losses while the canvas is still on the page.
           gl.domElement.addEventListener('webglcontextlost', e => {
             e.preventDefault();
-            onContextLost?.();
+            setTimeout(() => {
+              if (gl.domElement.isConnected) onContextLost?.();
+            }, 0);
           });
         }}
       >
