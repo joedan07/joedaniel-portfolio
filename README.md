@@ -1,110 +1,31 @@
-# joedaniel-portfolio
+# Joe Daniel — Portfolio v2
 
-# 🌐 Joe Daniel – Cyber-Themed Portfolio
+Revamped portfolio in a **"tactile tech console"** theme — skeuomorphic hardware surfaces (brushed metal, mechanical keys, LEDs, CRT screens) layered with maximalist motion (cursor-linked particle field, marquees, glows, sparks).
 
-A modern, interactive personal portfolio built using HTML, CSS, and Vanilla JavaScript.  
-This project combines cybersecurity-inspired aesthetics with advanced frontend interactions to showcase my technical skills, projects, and leadership experience.
+Built with **React + Vite**.
 
----
+## Run locally
 
-## 🚀 Live Website
+```bash
+npm install
+npm run dev
+```
 
-🔗 https://joedaniel-portfolio.vercel.app/
+Then open http://localhost:5173
 
----
+## Build for production
 
-## ✨ Features
+```bash
+npm run build
+```
 
-### 🎨 Visual & UI Design
-- Glitch-style animated name header
-- Animated gradient hero background
-- Matrix rain canvas effect
-- Cyber grid background pattern
-- Glassmorphism card design
-- Subtle noise overlay
-- Scroll progress indicator
+Output goes to `dist/`.
 
-### ⚡ Interactive Elements
-- Dark / Light mode toggle
-- Typewriter role animation
-- 3D tilt effect on project & skill cards
-- Magnetic button hover effect
-- Scroll reveal animations
-- Animated experience timeline
-- Responsive expanding navbar
+## Structure
 
----
-
-## 🛠 Tech Stack
-
-- **HTML5**
-- **CSS3**
-  - CSS Variables
-  - Glassmorphism
-  - Gradients & Keyframe Animations
-  - CSS Grid & Flexbox
-- **Vanilla JavaScript**
-  - DOM Manipulation
-  - Canvas API (Matrix Effect)
-  - Scroll-based animations
-  - Dynamic theme switching
-  - Micro-interaction logic
-
----
-
-## 📂 Project Structure
-
-portfolio/
-│
-├── index.html
-├── css/
-│ └── style.css
-├── js/
-│ └── main.js
-├── assets/
-│ └── images/
-|   └── profile.jpg
-| └── icons/
-└── README.md
-
-
----
-
-## 📌 Featured Projects
-
-- 🔐 **Password Generator & Chrome Extension**  
-  Published Chrome extension with customizable generation logic and password strength validation.
-
-- 📱 **Flutter + AppSheet Application**  
-  Mobile application focused on structured data management and workflow efficiency.
-
-- 🏆 **ClassHub – Hackathon Project**  
-  Functional solution developed under competitive time constraints.
-
-- 📷 **QR-Based Attendance System (Ongoing)**  
-  Secure QR-based system designed to prevent proxy attendance and improve record management.
-
----
-
-## 🎯 Purpose
-
-This portfolio serves as:
-
-- A professional showcase for internships and technical roles  
-- A representation of my cybersecurity-focused development approach  
-- A demonstration of frontend engineering and UI design capability  
-- A platform to document and present my ongoing technical journey  
-
----
-
-## 📬 Contact
-
-- 📧 Email: joedaniel7260@gmail.com  
-- 💼 LinkedIn: https://www.linkedin.com/in/joe-daniel-527b0b36a/  
-- 🐙 GitHub: https://github.com/joedan07
-
----
-
-## 📄 License
-
-This project is open-source and available under the MIT License.
+- `src/components/reactbits/` — integrated [React Bits](https://reactbits.dev) components (OptionWheel, BorderGlow, ClickSpark, RotatingText, ScrollVelocity, LogoLoop, TargetCursor)
+- `src/components/` — custom pieces (CursorField background, NavDial, Navbar, ScrollProgress)
+- `src/sections/` — page sections (Hero, About, TechStack, Projects, Experience, Contact)
+- `src/data/content.js` — **all portfolio content in one place** (edit projects, roles, links here)
+- `src/styles/` — design system (`index.css`) + section styles (`sections.css`)
+- `legacy/` — the original static site, preserved untouched
